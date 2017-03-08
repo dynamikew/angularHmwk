@@ -1,6 +1,6 @@
 
 
-angular.module('createAHero.dashboard', [
+angular.module('todoList.completedState', [
     
      
 ]);
