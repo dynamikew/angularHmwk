@@ -9,7 +9,7 @@ function completedStateConfig($stateProvider) {
     // REMEMBER: AngularJS is a single-page application framework. This means we
     // don't have the concept of "pages" but instead we use the concepts of "states"
     $stateProvider.state({
-        name: 'ompletedState', // name of the route
+        name: 'completedState', // name of the route
         url: '/completedState', // url endpoint for the route
         templateUrl: '/features/completedState/completedState.html', // The url to the view template
         controller: 'completedStateCtrl', // The name of the controller to use for this route

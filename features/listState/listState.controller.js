@@ -1,24 +1,22 @@
 angular
-    .module('createAHero.dashboard') // No array, as we are "extending" the module
-    .controller('DashboardCtrl', DashboardCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
+    .module('todoList.listState') // No array, as we are "extending" the module
+    .controller('ListStateCtrl', DashboardCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
 
-function DashboardCtrl($scope, $http) {
+function ListStateCtrl($scope, $http) {
     var vm = this; // vm stands for View Model - anything on "the vm" is exposed to the view
 
-    vm.story = {
-        heroName: '',
-        heroGender: '',
-        heroCity: '',
-        heroFights: '',
-        heroFightsOutcome: ''
+    vm.list = {
+        name: '',
+        item: '',
+        
     };
 
     $http({
         method: 'GET',
         url: 'https://randomuser.me/api/'
     }).then(function(response) {
-        vm.story.heroName = response.data.results[0].name.first;
-        vm.story.heroGender = response.data.results[0].gender;
-        vm.story.heroCity = response.data.results[0].location.city;
+        vm.story.name = response.data.results[0].name;
+        vm.story.item = response.data.results[0].item;
+        
     });
 }
